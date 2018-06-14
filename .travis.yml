@@ -1,4 +1,2 @@
 language: c
-script:
- -cmake
- -cmake --build
+script: code test
