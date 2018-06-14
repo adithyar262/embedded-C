@@ -1,5 +1,5 @@
-./configure && make && make test
 language: c
+script: ./configure && make && make test
 compiler:
  -clang
  -gcc
