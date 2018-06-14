@@ -1,3 +1,4 @@
+./configure && make && make test
 language: c
 compiler:
  -clang
