@@ -1,2 +1,5 @@
 language: c
-script: code test
+script: scons
+compiler:
+ -clang
+ -gcc
