@@ -10,22 +10,22 @@
    
 */
 
-int sensorPin = A0;    
-int ledPin = 13;      
-int sensorValue = 0;            //Variable to store the value coming from the sensor
+int sensor_pin = A0;
+int LED_pin = 13;  
 
-// declare the ledPin as an OUTPUT
-  
+//Variable to store the value coming from the sensor.
+int sensor_value = 0;
+
+// declares LED_pin as an OUTPUT
 void setup() {
-  pinMode(ledPin, OUTPUT);
+  pinMode(LED_pin, OUTPUT);
 }
 
 // Infinite loop to check potentiometer value and change LED Duty Cycle
-
 void loop() {
-  sensorValue = analogRead(sensorPin);
-  digitalWrite(ledPin, HIGH);
-  delay(sensorValue);
-  digitalWrite(ledPin, LOW);
-  delay(sensorValue);
+  sensor_value = analogRead(sensor_pin);
+  digitalWrite(LED_pin, HIGH);
+  delay(sensor_value);
+  digitalWrite(LED_pin, LOW);
+  delay(sensor_value);
 }
