@@ -9,15 +9,11 @@
 */
 
 //Nothing happens in the setup
-
-void setup()
-{
- }
+void setup(){
+}
 
 //Infinite loop to control speed of motor
-
-void loop()
-{
+void loop(){
   for(int i=0;i<=255;i+=10){
     analogWrite(A0,i);
   }
