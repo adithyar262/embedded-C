@@ -9,24 +9,25 @@
  
 */
 
-int ledPin = 9;    
+int LED_pin = 9;    
+
+//Variable to control LED brightness
+int fade_value;
 
 //Nothing happens in setup
-
 void setup() {
-  
+  pinMode(LED_pin,OUTPUT);
 }
 
 //Infinite loop to slowly increase and decrease the LED brightness
-
 void loop() {
-  for (int fadeValue = 0 ; fadeValue <= 255; fadeValue += 5) {    
-    analogWrite(ledPin, fadeValue);
+  for (fade_value = 0 ; fade_value <= 255; fade_value += 5) {    
+    analogWrite(LED_pin, fade_value);
     delay(30);
   }
 
-  for (int fadeValue = 255 ; fadeValue >= 0; fadeValue -= 5) {
-    analogWrite(ledPin, fadeValue);
+  for (fade_value = 255 ; fade_value >= 0; fade_value -= 5) {
+    analogWrite(LED_pin, fade_value);
     delay(30);
   }
 }
