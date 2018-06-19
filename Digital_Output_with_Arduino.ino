@@ -8,20 +8,17 @@
  
 */
 
-const int LED = 12;
+const int kLED = 12;
 
 //Sets up Pin 12 as OUTPUT
-
-void setup()
-{
-  pinMode(LED, OUTPUT);
+void setup(){
+  pinMode(kLED, OUTPUT);
 }
 
 //Infinite Loop to toggle the state of the LED
-void loop()
-{
-  digitalWrite(LED, HIGH);
+void loop(){
+  digitalWrite(kLED, HIGH);
   delay(1000);
-  digitalWrite(LED, LOW);
+  digitalWrite(kLED, LOW);
   delay(1000);
 }
