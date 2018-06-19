@@ -12,30 +12,28 @@
 
 #include <avr/io.h>
 
-int adc_value;                                                 //Variable to store the value read from the ADC converter
+//Variable to store the value read from the ADC converter
+int ADC_value;                                                 
 
-//Sets up the ADC and prescalar
-
+//Sets up the ADC and prescalar and runs the infinite loop
 int main(){
-    DDRB |= (1<<PB5);    
-    ADCSRA |= ((1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0));              //Setting Prescalar as 128
-    ADMUX |= (1<<REFS0);
-    ADMUX &= ~(1<<REFS1);                                      //Avcc(+5v) as voltage reference
-    ADCSRB &= ~((1<<ADTS2)|(1<<ADTS1)|(1<<ADTS0));             //Setting ADC in free-running mode
-    ADCSRA |= (1<<ADATE); 
-    ADCSRA |= (1<<ADEN);                                       //Power up the ADC
-    ADCSRA |= (1<<ADSC);                                       //Start converting
+  DDRB |= (1<<PB5);    
+  ADCSRA |= ((1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0));   //Setting Prescalar as 128
+  ADMUX |= (1<<REFS0);
+  ADMUX &= ~(1<<REFS1);                           //Avcc(+5v) as voltage reference
+  ADCSRB &= ~((1<<ADTS2)|(1<<ADTS1)|(1<<ADTS0));  //Setting ADC in free-running mode
+  ADCSRA |= (1<<ADATE); 
+  ADCSRA |= (1<<ADEN);                            //Power up the ADC
+  ADCSRA |= (1<<ADSC);                            //Start converting
 
-    // Infinite loop to check potentiometer value and toggle LED
-     
-    while(1){        
-       adc_value = ADCW; 
-       if(adc_value > 512){
-          PORTB |= (1<<PB5);
-       }
-       else {
-          PORTB &= ~(1<<PB5);  
-       }
-     }
-    return 0;
- }
+  // Infinite loop to check potentiometer value and toggle LED
+  while(1){        
+    ADC_value = ADCW; 
+    if (ADC_value > 512) {
+      PORTB |= (1<<PB5);
+    } else {
+      PORTB &= ~(1<<PB5);  
+    }
+  }
+  return 0;
+}
