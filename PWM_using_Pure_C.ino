@@ -16,22 +16,17 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-//Sets up PWN Mode and Timers
-
-int main ()
-{
+//Sets up PWM Mode, Timers and runs infinite loop to control LED brightness
+int main () {
   TCCR0A |= _BV(WGM01) | _BV(WGM00);                //Fast PWM mode
   
   //Inverting mode drives the output low while the counter is greater than OCRNx.
-  
   TCCR0A |= _BV(COM0A1) | _BV(COM0A0);              //Inverting fade down mode
   
   //Non-inverting mode drives the output high while the counter is greater than OCRNx.
-  
   TCCR0A |= _BV(COM0B1);                            //Non Inverting fade up mode
 
   //Reset all the timers and comparators
-  
   OCR0A = 0;
   OCR0B = 0;
   TCNT0 = 0;
@@ -39,7 +34,6 @@ int main ()
   DDRD |= _BV(PORTD5) | _BV(PORTD6);
 
   //Infinite loop to gradually vary the LED brightness
-  
   while (1){
     OCR0A++;
     OCR0B++;
