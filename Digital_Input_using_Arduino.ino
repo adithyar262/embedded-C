@@ -9,26 +9,26 @@
  
 */
 
-const int buttonPin = 2;     
-const int ledPin =  13;      
+const int kButtonPin = 2;     
+const int kLEDPin =  13;      
 
-int buttonState = 0;         // variable for reading the pushbutton status
+// variable for reading the pushbutton status
+int button_state = 0;         
 
-//Function to set Pin 13 as Output and Pin 2 as Input
- 
+//Function to set Pin 13 as Output and Pin 2 as Input.
 void setup() {
-  pinMode(ledPin, OUTPUT);
-  pinMode(buttonPin, INPUT);
+  pinMode(kLEDPin, OUTPUT);
+  pinMode(kButtonPin, INPUT);
 }
 
 // Infinite loop to check button state and toggle LED
-
 void loop() {
-  buttonState = digitalRead(buttonPin);
-  if (buttonState == HIGH) {
-    digitalWrite(ledPin, HIGH);
-  } 
-  else {
-    digitalWrite(ledPin, LOW);
+  button_state = digitalRead(kButtonPin);
+  
+  //Checks button state and toggles LED state accordingly
+  if (button_state == HIGH) {
+    digitalWrite(kLEDPin, HIGH);
+  } else {
+    digitalWrite(kLEDPin, LOW);
   }
 }
