@@ -9,9 +9,14 @@ before_install:
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
 install:
   - ln -s $PWD /usr/local/share/arduino/libraries/Adafruit_FONA
-  - arduino --install-library "Adafruit SleepyDog Library,Adafruit MQTT Library","Adafruit ILI9341","Adafruit GFX Library"
+  - arduino --install-library "Adafruit SleepyDog Library","Adafruit MQTT Library","Adafruit ILI9341","Adafruit GFX Library"
 script:
   - arduino --verify --board arduino:avr:uno $embedded-C/Analog_Input_with_Arduino.ino
+  - arduino --verify --board arduino:avr:uno $embedded-C/Analog_Input_with_Pure_C.ino
+  - arduino --verify --board arduino:avr:uno $embedded-C/Analog_Output_Using_Arduino.ino
+  - arduino --verify --board arduino:avr:uno $embedded-C/Analog_Output_Using_Pure_C.ino
+  - arduino --verify --board arduino:avr:uno $embedded-C/Counter_with_Arduino.ino
+  - arduino --verify --board arduino:avr:uno $embedded-C/Counter_with_Pure_C.ino
  notifications:
   email:
     on_success: change
