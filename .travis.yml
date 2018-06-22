@@ -31,7 +31,7 @@ env:
 - BOARD=genuino101
 - BOARD=zero
 script:
-  - arduino --verify --board arduino:avr:uno $embedded-C/Analog_Input_with_Arduino.ino
+  - arduino --verify --board arduino:avr:uno $embedded-C/Analog Arduino try.txt
   - arduino --verify --board arduino:avr:uno $embedded-C/Analog_Input_with_Pure_C.ino
   - arduino --verify --board arduino:avr:uno $embedded-C/Analog_Output_Using_Arduino.ino
   - arduino --verify --board arduino:avr:uno $embedded-C/Analog_Output_Using_Pure_C.ino
