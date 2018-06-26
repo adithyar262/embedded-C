@@ -5,7 +5,7 @@
 
 MCU = atmega8
 FORMAT = ihex
-TARGET = Analog_Input_with_Pure_C
+TARGET = Digital_Output_with_Pure_C
 SRC = $(TARGET).c
 ASRC = 
 OPT = s
