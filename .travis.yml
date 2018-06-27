@@ -2,7 +2,7 @@
 language: c
 env:
   matrix:
-        - APP_PATH="Timer using Pure C"
+        - APP_PATH="Digital_Input_Pure_C"
 before_install:
   - sudo apt-get update -qq
 install:
