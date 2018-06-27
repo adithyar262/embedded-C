@@ -1,6 +1,6 @@
 # Makefile 
 TARGET = Digital_Input_Pure_C
-OBJECTS = Digital_Input_Pure_C/Digital_Input_using_Pure_C.o \
+OBJECTS = Digital_Input_Pure_C/Digital_Input_using_Pure_C.c \
 
 ## Chip and project-specific global definitions
 MCU   =  atmega328p
