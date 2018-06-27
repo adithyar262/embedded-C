@@ -1,6 +1,6 @@
 # Makefile 
 TARGET = Timer_Pure_C
-OBJECTS = Timer_with_Pure_C.c \
+OBJECTS = Timer_2_with_Pure_C.c \
 
 ## Chip and project-specific global definitions
 MCU   =  atmega328p
