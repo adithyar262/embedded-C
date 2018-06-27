@@ -4,4 +4,13 @@ before_install:
   - sudo apt-get update -qq
 install:
   - sudo apt-get install -qq gcc-avr binutils-avr avr-libc
-script: make
+  # cppcheck
+  - sudo apt-get install -qq cppcheck
+script: 
+  # Build and run this project
+  - make
+  - ./travis_qmake_gcc_cpp98_cppcheck
+  # cppcheck (mild)
+  - cppcheck --quiet . 
+  # cppcheck that makes the Travis build fail
+  #- cppcheck --quiet --error-exitcode=1 . 
