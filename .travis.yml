@@ -4,6 +4,9 @@ env:
   matrix:
         - APP_PATH="Digital_Input_Pure_C"
         - APP_PATH="Counter_Pure_C"
+        - APP_PATH="Digital_Output_Pure_C"
+        - APP_PATH="PWM_Pure_C"
+        - APP_PATH="Timer_Pure_C"
 before_install:
   - sudo apt-get update -qq
 install:
