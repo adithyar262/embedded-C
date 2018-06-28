@@ -12,10 +12,10 @@ install:
 script:
   - avr-gcc --version
   - cd $APP_PATH
+  - make
   # Build and run this project
   - qmake
-  - make
-  - embedded-C/Digital_Output_Pure_C/travis_qmake_gcc_cpp98_cppcheck
+  - ./Digital_Output_Pure_C/travis_qmake_gcc_cpp98_cppcheck
   # cppcheck (mild)
   - cppcheck --quiet . 
   # cppcheck that makes the Travis build fail
