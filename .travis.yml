@@ -11,9 +11,18 @@ env:
         - APP_PATH="Timer_Pure_C"
 install:
   - sudo apt-get install -qq gcc-avr binutils-avr avr-libc
+  # cppcheck
+  - sudo apt-get install -qq cppcheck
   
 script:
   - avr-gcc --version
   - cd $APP_PATH
+  # Build and run this project
+  - qmake
   - make
+  - ./travis_qmake_gcc_cpp98_cppcheck
+  # cppcheck (mild)
+  - cppcheck --quiet . 
+  # cppcheck that makes the Travis build fail
+  #- cppcheck --quiet --error-exitcode=1 . 
   
