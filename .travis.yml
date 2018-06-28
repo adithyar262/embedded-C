@@ -1,19 +1,19 @@
 ---
-	language: c
-	env:
-	  matrix:
-	        - APP_PATH="Digital_Input_Pure_C"
-	        - APP_PATH="Analog_Input_Pure_C"
-	        - APP_PATH="Counter_Pure_C"
-	        - APP_PATH="Digital_Output_Pure_C"
-	        - APP_PATH="Analog_Output_Pure_C"
-	        - APP_PATH="PWM_Pure_C"
-	        - APP_PATH="Timer_Pure_C"
-	install:
-	  - sudo apt-get install -qq gcc-avr binutils-avr avr-libc
+language: c
+env:
+	matrix:
+	- APP_PATH="Digital_Input_Pure_C"
+	- APP_PATH="Analog_Input_Pure_C"
+	- APP_PATH="Counter_Pure_C"
+	- APP_PATH="Digital_Output_Pure_C"
+	- APP_PATH="Analog_Output_Pure_C"
+	- APP_PATH="PWM_Pure_C"
+	- APP_PATH="Timer_Pure_C"
+install:
+	- sudo apt-get install -qq gcc-avr binutils-avr avr-libc
 	  
-	script:
-	  - avr-gcc --version
-	  - cd $APP_PATH
-	  - make
+script:
+  - avr-gcc --version
+  - cd $APP_PATH
+  - make
 	  
