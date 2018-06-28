@@ -15,7 +15,8 @@ script:
   - make
   # Build and run this project
   - qmake
-  - ./Digital_Output_Pure_C/travis_qmake_gcc_cpp98_cppcheck
+  - make
+  - ./travis_qmake_gcc_cpp98_cppcheck
   # cppcheck (mild)
   - cppcheck --quiet . 
   # cppcheck that makes the Travis build fail
