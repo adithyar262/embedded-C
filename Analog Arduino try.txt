@@ -25,7 +25,7 @@ void setup() {
 void loop() {
   sensor_value = analogRead(sensor_pin);
   digitalWrite(LED_pin, HIGH);
-  delay(sensor_value);
+  delay(sensor_value);.
   digitalWrite(LED_pin, LOW);
   delay(sensor_value);
 }
